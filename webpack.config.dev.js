@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
@@ -28,10 +27,7 @@ module.exports = {
       chunks: 'all',
     },
   },
-  plugins: [
-    new CleanWebpackPlugin({
-      cleanAfterEveryBuildPatterns: ['dev']
-  }),
+  plugins: [    
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       filename: 'index.html'
@@ -43,7 +39,13 @@ module.exports = {
   ],
   module: {
     rules: [
-      {test:'/\.js$/' , loader:'babel-loader', exclude: '/node_modules/'},
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
+        }
+      },
       {test:'/\.jsx$/' , loader:'babel-loader', exclude: '/node_modules/'},
       {
         enforce: 'pre',
@@ -63,7 +65,6 @@ module.exports = {
       {
         test: /\.css$/,
         use: [
-            'style-loader',
             'css-loader'
         ]
     },
