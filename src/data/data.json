@@ -1,0 +1,46 @@
+{
+    "movies": [
+      {
+        "id": "1",
+        "title": "Captain Marvel",
+        "genre": "Action",
+        "year": 2019,
+        "picLink": "https://m.media-amazon.com/images/M/MV5BMTE0YWFmOTMtYTU2ZS00ZTIxLWE3OTEtYTNiYzBkZjViZThiXkEyXkFqcGdeQXVyODMzMzQ4OTI@._V1_SY1000_CR0,0,675,1000_AL_.jpg"
+      },
+      {
+        "id": "2",
+        "title": "Dark Phoenix",
+        "year": 2019,
+        "genre": "Action",
+        "picLink": "https://m.media-amazon.com/images/M/MV5BMjAwNDgxNTI0M15BMl5BanBnXkFtZTgwNTY4MDI1NzM@._V1_SY1000_CR0,0,631,1000_AL_.jpg"
+      },
+      {
+        "id": "3",
+        "title": "Hellboy",
+        "year": 2019,
+        "genre": "Action",
+        "picLink": "https://m.media-amazon.com/images/M/MV5BYTMyYjg0MTItYTcyZS00MmRiLWIxNWQtYTRiZjRkYWMxZGNkXkEyXkFqcGdeQXVyNjg2NjQwMDQ@._V1_SY1000_CR0,0,657,1000_AL_.jpg"
+      },
+      {
+        "id": "4",
+        "title": "The Lion King",
+        "year": 2019,
+        "genre": "Cartoon",
+        "picLink": "https://m.media-amazon.com/images/M/MV5BMjIwMjE1Nzc4NV5BMl5BanBnXkFtZTgwNDg4OTA1NzM@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
+      },
+      {
+        "id": "5",
+        "title": "Alita: Battle Angel",
+        "year": 2019,
+        "genre": "Cartoon",
+        "picLink": "https://m.media-amazon.com/images/M/MV5BNzVhMjcxYjYtOTVhOS00MzQ1LWFiNTAtZmY2ZmJjNjIxMjllXkEyXkFqcGdeQXVyNTc5OTMwOTQ@._V1_.jpg"
+      },
+      {
+        "id": "6",
+        "title": "Pokémon Detective",
+        "year": 2019,
+        "genre": "Cartoon",
+        "picLink": "https://m.media-amazon.com/images/M/MV5BNDU4Mzc3NzE5NV5BMl5BanBnXkFtZTgwMzE1NzI1NzM@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
+      }
+    ]
+}

@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: 'development',
-  entry: ['./src/index.js'],
+  entry: ['./src/index.tsx'],
   output: {
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js',
@@ -12,7 +12,7 @@ module.exports = {
   },
   resolve: {
     modules: [path.resolve(__dirname, './src'), 'node_modules'],
-    extensions: ['.js', '.jsx', '.json', 'css']
+    extensions: ['ts', 'tsx', '.js', '.jsx', '.json', 'css', 'scss']
   },
   watch: true,
   devtool: 'source-map',
@@ -39,6 +39,10 @@ module.exports = {
   ],
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: 'awesome-typescript-loader'
+      },
       {
         test: /\.js$/,
         exclude: /node_modules/,
@@ -72,6 +76,7 @@ module.exports = {
         test: /\.scss$/,
         use: [
           { loader: MiniCssExtractPlugin.loader },
+          'style-loader',
           'css-loader',
           'sass-loader'
         ],
