@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+var sassLintPlugin = require('sasslint-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -12,7 +13,7 @@ module.exports = {
   },
   resolve: {
     modules: [path.resolve(__dirname, './src'), 'node_modules'],
-    extensions: ['ts', 'tsx', '.js', '.jsx', '.json', 'css', 'scss']
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', 'css', 'scss']
   },
   watch: true,
   devtool: 'source-map',
@@ -27,7 +28,7 @@ module.exports = {
       chunks: 'all',
     },
   },
-  plugins: [    
+  plugins: [ 
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       filename: 'index.html'
@@ -41,7 +42,7 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'awesome-typescript-loader'
+        loader: 'ts-loader'
       },
       {
         test: /\.js$/,
@@ -67,20 +68,34 @@ module.exports = {
         ]
       },
       {
-        test: /\.css$/,
-        use: [
-            'css-loader'
-        ]
-    },
-      {
         test: /\.scss$/,
         use: [
-          { loader: MiniCssExtractPlugin.loader },
-          'style-loader',
-          'css-loader',
-          'sass-loader'
+          {
+            loader: 'style-loader',
+            options: {
+              sourceMap: true,
+            },
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              modules: true,
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+              modules: true,
+            },
+          },
         ],
-      },
+      },  
+    {
+      test: /\.json$/,
+      loader: 'json-loader'
+    },    
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [

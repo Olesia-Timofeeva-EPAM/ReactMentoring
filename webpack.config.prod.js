@@ -12,7 +12,7 @@ module.exports = {
   },
   resolve: {
     modules: [path.resolve(__dirname, './src'), 'node_modules'],
-    extensions: ['.js', '.jsx', '.json']
+    extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
   },
   devServer: {
     contentBase: path.join(__dirname, 'build'),
@@ -54,6 +54,10 @@ module.exports = {
             //options: { attrs: false }
           }
         ]
+      },
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader'
       },
       {
         test: /\.js$/,

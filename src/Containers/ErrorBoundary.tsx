@@ -1,8 +1,9 @@
-import React, {Component} from 'react';
+import * as React from 'react';
+import {Component} from 'react';
 import ErrorBoundaryComponent from '../Components/ErrorBoundary'
 
 export default class ErrorBoundary extends Component {
-    state = {hasError: false};
+    state = {errorName: '', componentStack: '', hasError: false};
 
     static getDerivedStateFromError() {
         return {hasError: true};
