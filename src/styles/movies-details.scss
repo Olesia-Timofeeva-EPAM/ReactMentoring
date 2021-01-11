@@ -1,0 +1,33 @@
+.movie-details {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column  wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+  
+  
+    &__detail-name {
+      font-size: 5em;
+      color:red;
+      margin-bottom: 10px;
+    }
+
+    &__detail-text {
+      font-size: 3em;
+      color:white;
+    }
+
+    &__reset {
+      font-size: 5em;
+      color:red;
+      border-color: red;
+      color: red;
+    }
+
+    &__submit {
+      font-size: 5em;
+      color:white;
+      background-color: red;
+    }
+  }
