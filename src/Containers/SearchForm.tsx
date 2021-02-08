@@ -1,29 +1,26 @@
 import * as React from 'react';
-import {Component} from 'react';
-import * as PropTypes from 'prop-types';
+import {Component, useState} from 'react';
 import SearchFormComponent from '../Components/SearchForm';
 
-export default class SearchForm extends Component {
-    state = {
-        searchValue: ''
-    }
+export interface SearchFormProps {
+    handleSubmit: () => void;
+  }
 
-    static propTypes = {
-        handleSubmit: PropTypes.func.isRequired,
-      }
+const SearchForm: React.FC<SearchFormProps>  = props => {
+    
+    const [searchValue, setSearchValue] = useState('');
 
-    handleInput = e => {
-        this.setState({ [`${e.target.name}Value`]: e.target.value});
+    const handleInput = e => {
+        //this.setState({ [`${e.target.name}Value`]: e.target.value});
     };
 
-    render() {
-        //const {handleSubmit} = this.props.;
-        return (
-            <SearchFormComponent
-                handleSubmit={this.props.handleSubmit}
-                handleInput={this.handleInput}
-                state={this.state}
-            />
-        );
-    }
-}
+    return (
+        <SearchFormComponent
+            handleSubmit={props.handleSubmit}
+            handleInput={handleInput}
+            searchValue={searchValue}
+        />
+    );
+};
+
+export default SearchForm;

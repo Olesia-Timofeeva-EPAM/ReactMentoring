@@ -1,6 +1,7 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 
-import styles from "../styles/movie-details.scss";
+import * as styles from "../styles/movie-fields.scss";
 
 export interface MovieDetailsProps {
     id: string;
@@ -18,9 +19,17 @@ export interface MovieDetailsProps {
 
 const MovieDetails: React.FC<MovieDetailsProps> = props => {
     const {id, title, releaseDate, movieUrl, genre, overview, runTime, submitTitle, reset, submit, isEdit} = props;
+    const [header, setHeader] = useState('');
+
+    useEffect(() => {
+        setHeader(title);
+        }
+    );
+
     return(
         <>
-            <div className={styles['movie-details__body']}>
+        <div className={styles['header']}>{header}</div>
+            <div className={styles['movie-details']}>
                 {isEdit} && <div>
                     <div className={styles['movie-details__detail-name']}>
                         ID

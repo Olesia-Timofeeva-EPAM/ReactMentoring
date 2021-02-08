@@ -1,11 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-var sassLintPlugin = require('sasslint-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: ['./src/index.tsx'],
+  entry: ['index.tsx'],
   output: {
     filename: '[name].bundle.js',
     chunkFilename: '[name].bundle.js',
@@ -71,31 +70,16 @@ module.exports = {
         test: /\.scss$/,
         use: [
           {
-            loader: 'style-loader',
-            options: {
-              sourceMap: true,
-            },
+            loader: 'style-loader'
           },
           {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-              modules: true,
-            },
+            loader: 'css-loader'
           },
           {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-              modules: true,
-            },
+            loader: 'sass-loader'
           },
         ],
-      },  
-    {
-      test: /\.json$/,
-      loader: 'json-loader'
-    },    
+      },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [

@@ -4,7 +4,7 @@ import SearchForm from '../Containers/SearchForm';
 
 export interface SearchMovieProps {
     moviesCount: number;
-    handleSubmit: (event: React.FormEvent<HTMLFormElement>, state: Object) => void;
+    handleSubmit: () => void;
     movies: []
   }
 

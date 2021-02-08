@@ -1,0 +1,13 @@
+.movie-card{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 30px;
+
+    &__detail-name {
+        font-size: 5em;
+        color:white;
+        margin-bottom: 10px;
+      }
+}

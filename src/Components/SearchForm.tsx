@@ -1,18 +1,18 @@
 import * as React from 'react';
 
-import styles from '../styles/search-form.scss';
+import * as styles from '../styles/search-form.scss';
 
 export interface SearchFormProps {
-    handleSubmit: (event: React.FormEvent<HTMLFormElement>, state: Object) => void;
+    handleSubmit: (event: React.FormEvent<HTMLFormElement>, searchValue: string) => void;//
     handleInput: (value: any) => void;
-    state: object;
+    searchValue: string;
   }
 
 const SearchFormComponent: React.FC<SearchFormProps> = props => {
     return (
-        <form className={styles.form} onSubmit={e => props.handleSubmit(e, props.state)}>
-            <input type="text" name="search" placeholder="Search..." onChange={props.handleInput }/>
-            < input type="submit" value="Search" />
+        <form className={styles.form} onSubmit={e => props.handleSubmit(e, props.searchValue)}>
+            <input type="text" name="search" placeholder="Search..." value={props.searchValue || ''} onChange={props.handleInput }/>
+            <input type="submit" value="Search" />
         </form>
     );
 };

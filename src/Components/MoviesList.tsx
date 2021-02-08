@@ -1,6 +1,6 @@
 import * as React from 'react';
 import MovieCard from './MovieCard';
-import styles from '../styles/movies-list.scss';
+import * as styles from '../styles/movies-list.scss';
 
 export interface MoviesListProps {
     movies: [];

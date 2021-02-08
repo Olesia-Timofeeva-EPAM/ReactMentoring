@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import styles from "../styles/movie-card.scss";
+import * as styles from "../styles/movie-card.scss";
 
 export interface MovieCardProps {
     title: string;

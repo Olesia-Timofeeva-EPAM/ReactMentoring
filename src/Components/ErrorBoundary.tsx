@@ -1,5 +1,5 @@
 import * as React from 'react';
-import styles from '../styles/error-boundary.scss';
+import * as styles from '../styles/error-boundary.scss';
 
 export interface ErrorBoundaryProps {
     errorName: string;
