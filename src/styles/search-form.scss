@@ -4,8 +4,8 @@
 
     input {
         &[type='text'] {
-            padding: 10px 15 px;
-            width: 80%;
+            padding: 10px 2px;
+            width: 60%;
         }
 
         &[type='text'],
@@ -23,7 +23,6 @@
         &:hover,
         &:active,
         &:focus {
-            color: #fff;
             border-color: #fff;
             box-shadow: 0 .5em .5em -.4em #fff;
             transform: translateY(-.25em);

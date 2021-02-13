@@ -11,8 +11,8 @@ export interface SearchFormProps {
 const SearchFormComponent: React.FC<SearchFormProps> = props => {
     return (
         <form className={styles.form} onSubmit={e => props.handleSubmit(e, props.searchValue)}>
-            <input type="text" name="search" placeholder="Search..." value={props.searchValue || ''} onChange={props.handleInput }/>
-            <input type="submit" value="Search" />
+            <input type="text" name="search" placeholder="Search..." value={props.searchValue} onChange={props.handleInput }/>
+            <input type="submit" value="Search"/>
         </form>
     );
 };

@@ -32,7 +32,7 @@ const SearchMovie = props => {
         <SearchMovieComponent
             handleSubmit={handleSubmit}
             moviesCount={getMovies().length}
-            movies={getMovies}
+            movies={getMovies()}
             {...props}
         />
     ); 

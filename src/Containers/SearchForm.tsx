@@ -11,7 +11,7 @@ const SearchForm: React.FC<SearchFormProps>  = props => {
     const [searchValue, setSearchValue] = useState('');
 
     const handleInput = e => {
-        //this.setState({ [`${e.target.name}Value`]: e.target.value});
+        setSearchValue(e.target.value);
     };
 
     return (
