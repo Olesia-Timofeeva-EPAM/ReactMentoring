@@ -6,7 +6,7 @@ export interface MovieCardProps {
     title: string;
     year: string;
     genre: string;
-    pictLink: string;
+    picLink: string;
   }
 
 const MovieCard: React.FC<MovieCardProps> = props => {

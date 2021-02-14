@@ -15,14 +15,13 @@ const SearchMovie = props => {
     }, [setSearchValue]);
 
   const  getMovies = () => {
-
         let { movies } = data;
         movies = [...movies].sort((a, b) => {
           return b[searchValue] - a[searchValue];
         });
         if (searchValue !== '') {
           movies = movies.filter(el => {
-            return el[searchValue].toLowerCase().indexOf(searchValue.toLowerCase()) >= 0;
+            return el.title.toLowerCase().indexOf(searchValue.toLowerCase()) >= 0;
           });
         }
         return movies;
