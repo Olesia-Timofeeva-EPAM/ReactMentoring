@@ -1,0 +1,46 @@
+.header {
+  font-size: 5em;
+      color:white;
+      margin-bottom: 10px;
+}
+.movie-details {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column  wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+  
+  
+    &__detail-name {
+      font-size: 20px;
+      color:rgb(245, 96, 96);
+      margin-bottom: 10px;
+    }
+
+    &__detail-text {
+      font-size: 20px;
+      color:white;
+      margin-bottom: 30px;
+    }
+
+    &__reset {
+      font-size: 20px;
+      border-color: rgb(245, 96, 96);
+      color: rgb(245, 96, 96);
+      margin: 0px 30px;
+    }
+
+    &__submit {
+      font-size: 20px;
+      color:white;
+      background-color: rgb(245, 96, 96);
+    }
+
+    &__buttons {
+      display: flex;
+      flex-flow: row  wrap;
+      align-items: flex-start;
+      justify-content: space-around;
+    }
+  }

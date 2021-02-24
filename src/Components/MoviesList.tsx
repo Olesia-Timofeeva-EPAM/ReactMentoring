@@ -10,7 +10,7 @@ const MoviesListComponent: React.FC<MoviesListProps> = props => {
     const createList = () => {
         const {movies} = props;
         if(movies.length)
-            return movies.map((movie, i) => <MovieCard {...movie} key={'${movie.title}_${i}'} />);
+            return movies.map((movie, i) => <MovieCard {...movie} key={i} />);
         else
             return (
                 <span className={styles['movie-list__message']}>No movies that match your query</span>

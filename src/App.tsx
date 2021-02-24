@@ -1,22 +1,12 @@
 import * as React from 'react';
-import Footer from './Components/Footer';
-import * as styles from './styles/app.scss';
-import Header from './Components/Header';
-import ErrorBoundary from './Containers/ErrorBoundary';
-import SearchMovie from './Containers/SearchMovie';
+import  AppComponent from './Components/App';
+import { useState } from 'react';
 
-export default function App() {
-
-  
+const App = () => {  
   return (
     <>
-      <Header/>
-      <main className={styles.container}>
-          <ErrorBoundary>
-              <SearchMovie />
-          </ErrorBoundary>
-      </main>
-      <Footer/>
+      <AppComponent  />;   
     </>
   );
 }
+export default App;

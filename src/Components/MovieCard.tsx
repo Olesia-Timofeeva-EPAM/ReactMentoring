@@ -14,7 +14,10 @@ const MovieCard: React.FC<MovieCardProps> = props => {
     return(
         <>
         <div>
-            <img className={styles['movie-card__img']} src={picLink} height="400" />
+            <div className={styles['movie-card__container']}>
+                <img className={styles['movie-card__img']} src={picLink} height="400" />
+                <button className={styles['movie-card__btn']}>...</button>
+            </div>
             <div className={styles['movie-card__body']}>
                 <div className={styles['movie-card__line']}>
                     <h2 className={styles['movie-card__title']}>

@@ -4,6 +4,8 @@ import SearchFormComponent from '../Components/SearchForm';
 
 export interface SearchFormProps {
     handleSubmit: () => void;
+    toggled_sortValue: string;
+    handleSort: () => void;
   }
 
 const SearchForm: React.FC<SearchFormProps>  = props => {
@@ -15,10 +17,12 @@ const SearchForm: React.FC<SearchFormProps>  = props => {
     };
 
     return (
-        <SearchFormComponent
+        <SearchFormComponent 
             handleSubmit={props.handleSubmit}
             handleInput={handleInput}
             searchValue={searchValue}
+            toggled_sortValue={props.toggled_sortValue}
+            handleSort={props.handleSort}
         />
     );
 };
