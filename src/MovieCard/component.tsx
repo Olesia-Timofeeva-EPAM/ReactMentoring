@@ -4,18 +4,20 @@ import * as styles from "../styles/movie-card.scss";
 
 export interface MovieCardProps {
     title: string;
-    year: string;
+    release_date: string;
     genre: string;
-    picLink: string;
+    poster_path: string;
+    vote_average: number;
+    runtime: number;
   }
 
 const MovieCard: React.FC<MovieCardProps> = props => {
-    const {title, year, genre, picLink} = props;
+    const {title, release_date, genre, poster_path, vote_average, runtime} = props;
     return(
         <>
         <div>
             <div className={styles['movie-card__container']}>
-                <img className={styles['movie-card__img']} src={picLink} height="400" />
+                <img className={styles['movie-card__img']} src={poster_path} height="400" />
                 <button className={styles['movie-card__btn']}>...</button>
             </div>
             <div className={styles['movie-card__body']}>
@@ -24,7 +26,7 @@ const MovieCard: React.FC<MovieCardProps> = props => {
                         {title}
                     </h2>
                     <span className={styles['movie-card__year']}>
-                        {year}
+                        {release_date}
                     </span>
                 </div>
                 <div className={styles['movie-card__subline']}>

@@ -1,25 +1,20 @@
 import * as React from 'react';
-import MoviesList from './MoviesList';
-import SearchForm from '../Containers/SearchForm';
+import MoviesList from '../MoviesList/container.enhanced';
+import SearchForm from '../SearchForm/container.enhanced';
 import * as styles from "../styles/search-movie.scss";
-import MovieFields from './MovieFields';
+import MovieFields from '../Components/MovieFields';
 import { useState } from 'react';
+import Toggle from '../Components/Toggle';
 
 export interface SearchMovieProps {
-    moviesCount: number;
-    handleSubmit: () => void;
-    movies: [];
-    toggled_sortValue: string;
-    handleSort: () => void;
+    sortBy, 
+    moviesCount, 
+    handleToggle
   }
 
 const SearchMovie: React.FC<SearchMovieProps>  = props => {
     const {
-        moviesCount,
-        handleSubmit,
-        movies,
-        toggled_sortValue,
-        handleSort
+        sortBy, moviesCount, handleToggle
     } = props;
 
     const [modalIsOpen,setIsOpen] = useState(false);
@@ -42,12 +37,12 @@ const SearchMovie: React.FC<SearchMovieProps>  = props => {
             <button className={styles['search-movie__addBtn']} onClick={openModal}>+ ADD MOVIE</button>
             <MovieFields isEdit={false} title={'Add Movie'} reset={closeModal} submit={submitAdd} show={modalIsOpen}/> 
 
-            <SearchForm
-                handleSubmit={handleSubmit} toggled_sortValue={toggled_sortValue} handleSort={handleSort} />
+            <SearchForm />
 
             <span>{moviesCount + 'films are found'}</span>
             
-            <MoviesList movies={movies} />
+            
+            <MoviesList />
         </>
     );
 };
